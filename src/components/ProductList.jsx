@@ -23,7 +23,13 @@ const products = [
 //ProductCard 컴포넌트를 사용하여 각 상품을 렌더링하세요.
 //ProductCard 컴포넌트를 확인하여 props를 전달하세요.
 const ProductList = ({ addToCart }) => {
-    return <div className="product-list"></div>;
+    return( 
+    <>
+    {products.map((val) => (
+    <ProductCard key = {val.id} product={val} addToCart={addToCart}/>
+    ))}
+    </>
+    )
 };
 
 export default ProductList;
